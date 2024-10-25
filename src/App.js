@@ -48,6 +48,11 @@ function App() {
             );
           })}
         </div>
+        <div className="pager">
+          <button className="prev">Previous</button>
+          <span className="page-number">1</span>
+          <button className="next">Next</button>
+        </div>
       </main>
     </div>
   );
