@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 import CharacterDetail from "./CharacterDetail";
+import StandList from "./StandList";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -124,6 +125,7 @@ function App() {
               }
             />
             <Route path="/character/:id" element={<CharacterDetail />} />
+            <Route path="/stands" element={<StandList />} />
           </Routes>
         )}
       </div>
