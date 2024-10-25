@@ -138,6 +138,11 @@ main {
 }
 
 @media (max-width: 768px) {
+  .header-navi {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .container {
     padding: 8px;
   }
