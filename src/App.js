@@ -55,6 +55,19 @@ function App() {
               path="/"
               element={
                 <main>
+                  <div className="pager">
+                    <button
+                      className="prev"
+                      onClick={handlePrev}
+                      disabled={page === 1}
+                    >
+                      Previous
+                    </button>
+                    <span className="page-number">{page}</span>
+                    <button className="next" onClick={handleNext}>
+                      Next
+                    </button>
+                  </div>
                   <div className="cards-container">
                     {getPaginatedCharacters().map((character) => {
                       return (

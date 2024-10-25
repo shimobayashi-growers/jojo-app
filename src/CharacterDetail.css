@@ -1,5 +1,5 @@
 .detail {
-  max-width: 600px;
+  max-width: 800px;
   margin: 20px auto;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -11,8 +11,8 @@
 }
 
 .detail-image {
-  width: 30%;
-  height: 30%;
+  width: 50%;
+  height: 50%;
   display: block;
   margin: 10px; /* 画像の周りに余白を追加 */
 }

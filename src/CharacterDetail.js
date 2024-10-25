@@ -39,6 +39,15 @@ function CharacterDetail() {
         <p className="detail-description">
           {character.catchphrase != null ? character.catchphrase : "なし"}
         </p>
+        <p className="detail-description">
+          {character.abilities != null ? character.abilities : "なし"}
+        </p>
+        <p className="detail-description">
+          {character.nationality != null ? character.nationality : "なし"}
+        </p>
+        <p className="detail-description">
+          {character.family != null ? character.family : "なし"}
+        </p>
         <div className="detail-footer">
           <span className="detail-affiliation">
             {character.chapter != null ? character.chapter : "なし"}
