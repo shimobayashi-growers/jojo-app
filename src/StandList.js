@@ -68,8 +68,13 @@ function StandList() {
                     <div className="card-content">
                       <h3 className="card-title">{stand.name}</h3>
                       <p className="card-description">
-                        {stand.ability != null ? stand.ability : "なし"}
+                        {stand.abilities != null ? stand.abilities : "なし"}
                       </p>
+                      <div className="card-footer">
+                        <span className="affiliation">
+                          {stand.chapter != null ? stand.chapter : "なし"}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </Link>

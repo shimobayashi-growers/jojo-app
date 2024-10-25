@@ -1,5 +1,15 @@
+.header-navi {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: #ffffff;
+}
+
 .nav-link {
-  margin-right: 16px;
+  margin: 0 16px;
   text-decoration: none;
   color: #333;
   font-weight: bold;
@@ -20,7 +30,7 @@
 
 .header {
   display: flex;
-  flex-direction: row; /* 横並びにするために追加 */
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding-top: 16px;
@@ -29,7 +39,7 @@
 }
 
 .header-content {
-  display: flex; /* 横並びにするために追加 */
+  display: flex;
   width: 100%;
   max-width: 1280px;
   margin-left: auto;
@@ -40,8 +50,9 @@
 .logo {
   margin-right: 16px;
   width: 150px;
-  height: auto; /* 縦に潰れないように修正 */
-  max-height: 100px; /* 必要に応じて最大高さを設定 */
+  height: auto;
+  max-height: 100px;
+  display: block;
 }
 
 main {
@@ -65,14 +76,14 @@ main {
   padding: 10px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
-  text-decoration: none; /* リンクの下線をなくす */
-  color: #333; /* リンクの文字色を変更 */
+  text-decoration: none;
+  color: #333;
 }
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  color: #0056b3; /* ホバー時の文字色を変更 */
+  color: #0056b3;
 }
 
 .card-image {
@@ -88,7 +99,7 @@ main {
 
 .card-title {
   margin: 0;
-  font-size: 1.25rem; /* 文字サイズを大きく変更 */
+  font-size: 1.25rem;
   font-weight: 600;
   text-align: center;
 }
@@ -147,7 +158,7 @@ main {
   }
 
   .card-title {
-    font-size: 1.125rem; /* メディアクエリ内の文字サイズを調整 */
+    font-size: 1.125rem;
   }
 
   .card-description,
@@ -155,6 +166,7 @@ main {
     font-size: 0.75rem;
   }
 }
+
 .pager {
   text-align: center;
   padding: 20px;

@@ -11,16 +11,21 @@ function App() {
         <div className="header">
           <div className="header-content">
             <Link to="/">
-              <img src="jojo-logo.jpg" alt="logo" className="logo"></img>
+              <img
+                src="jojo-logo.jpg"
+                alt="logo"
+                className="logo"
+                style={{ height: "auto", maxHeight: "100px" }}
+              ></img>
             </Link>
-            <nav>
+            <div className="header-navi">
               <Link to="/characters" className="nav-link">
                 Characters
               </Link>
               <Link to="/stands" className="nav-link">
                 Stands
               </Link>
-            </nav>
+            </div>
           </div>
         </div>
         <Routes>
