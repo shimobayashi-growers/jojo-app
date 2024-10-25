@@ -11,18 +11,29 @@ function App() {
   }, []);
 
   const fetchCharacters = async () => {
-    const apiUrl = "https://stand-by-me.herokuapp.com/api/v1/characters";
+    const apiUrl = `https://stand-by-me.herokuapp.com/api/v1/characters`;
     setIsLoading(true);
     const result = await axios.get(apiUrl);
     setCharacters(result.data);
-    console.log(result);
     setIsLoading(false);
   };
-  const handleNext = async () => {
-    const nextPage = page + 1;
-    await fetchCharacters(nextPage);
-    setPage(nextPage);
+
+  const getPaginatedCharacters = () => {
+    const startIndex = (page - 1) * 9;
+    const endIndex = startIndex + 9;
+    return characters.slice(startIndex, endIndex);
   };
+
+  const handleNext = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePrev = () => {
+    if (page > 1) {
+      setPage((prevPage) => prevPage - 1);
+    }
+  };
+
   return (
     <div className="container">
       {isLoading ? (
@@ -30,7 +41,7 @@ function App() {
       ) : (
         <main>
           <div className="cards-container">
-            {characters.map((character) => {
+            {getPaginatedCharacters().map((character) => {
               return (
                 <div className="card" key={character.id}>
                   <img
@@ -60,7 +71,9 @@ function App() {
             })}
           </div>
           <div className="pager">
-            <button className="prev">Previous</button>
+            <button className="prev" onClick={handlePrev} disabled={page === 1}>
+              Previous
+            </button>
             <span className="page-number">{page}</span>
             <button className="next" onClick={handleNext}>
               Next
