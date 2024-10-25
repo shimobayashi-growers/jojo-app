@@ -1,0 +1,16 @@
+name: Render Deploy
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ttskch/render-deploy@v1.0.0
+        with:
+          api-key: $rnd_puM0mjKGhXyN8E8HB1Lfuk98YHOh
+          service-id: $cscpi7jv2p9s73flg7og
+          interval: 20 # optional
+          timeout: 300 # optional
