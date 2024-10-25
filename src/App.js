@@ -3,6 +3,7 @@ import "./App.css";
 import CharacterDetail from "./CharacterDetail";
 import StandList from "./StandList";
 import CharacterList from "./CharacterList"; // 追加
+import StandDetail from "./StandDetail"; // 追加
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/characters" element={<CharacterList />} />
           <Route path="/character/:id" element={<CharacterDetail />} />
           <Route path="/stands" element={<StandList />} />
+          <Route path="/stand/:id" element={<StandDetail />} /> {/* 追加 */}
         </Routes>
       </div>
     </Router>
