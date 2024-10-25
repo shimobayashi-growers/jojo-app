@@ -19,10 +19,10 @@ function App() {
               ></img>
             </Link>
             <div className="header-navi">
-              <Link to="/characters" className="nav-link">
+              <Link to="/characters" className="nav-link button-link">
                 Characters
               </Link>
-              <Link to="/stands" className="nav-link">
+              <Link to="/stands" className="nav-link button-link">
                 Stands
               </Link>
             </div>
@@ -45,10 +45,10 @@ function Home() {
       <h1>Welcome to JoJo's Bizarre Adventure App</h1>
       <p>Select a category to explore:</p>
       <nav>
-        <Link to="/characters" className="nav-link">
+        <Link to="/characters" className="nav-link button-link">
           Characters
         </Link>
-        <Link to="/stands" className="nav-link">
+        <Link to="/stands" className="nav-link button-link">
           Stands
         </Link>
       </nav>
