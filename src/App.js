@@ -36,6 +36,11 @@ function App() {
 
   return (
     <div className="container">
+      <div className="header">
+        <div className="header-content">
+          <img src="jojo-logo.jpg" alt="logo" className="logo"></img>
+        </div>
+      </div>
       {isLoading ? (
         <div className="loading">Now Loading...</div>
       ) : (
