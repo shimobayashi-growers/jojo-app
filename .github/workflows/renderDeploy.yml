@@ -11,6 +11,6 @@ jobs:
       - uses: ttskch/render-deploy@v1.0.0
         with:
           api-key: $rnd_puM0mjKGhXyN8E8HB1Lfuk98YHOh
-          service-id: $cscpi7jv2p9s73flg7og
+          service-id: $srv-cscpi7jv2p9s73flg7og
           interval: 20 # optional
           timeout: 300 # optional
