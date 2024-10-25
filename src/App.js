@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
+import CharacterDetail from "./CharacterDetail";
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     fetchCharacters();
   }, []);
@@ -35,58 +38,83 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <div className="header">
-        <div className="header-content">
-          <img src="jojo-logo.jpg" alt="logo" className="logo"></img>
+    <Router>
+      <div className="container">
+        <div className="header">
+          <div className="header-content">
+            <Link to="/">
+              <img src="jojo-logo.jpg" alt="logo" className="logo"></img>
+            </Link>
+          </div>
         </div>
-      </div>
-      {isLoading ? (
-        <div className="loading">Now Loading...</div>
-      ) : (
-        <main>
-          <div className="cards-container">
-            {getPaginatedCharacters().map((character) => {
-              return (
-                <div className="card" key={character.id}>
-                  <img
-                    src={
-                      character.image != null
-                        ? `https://jojos-bizarre-api.netlify.app/assets/${character.image}`
-                        : `dummy.png`
-                    }
-                    alt="character"
-                    className="card-image"
-                  ></img>
-                  <div className="card-content">
-                    <h3 className="card-title">{character.japaneseName}</h3>
-                    <p className="card-description">
-                      {character.catchphrase != null
-                        ? character.catchphrase
-                        : "なし"}
-                    </p>
-                    <div className="card-footer">
-                      <span className="affiliation">
-                        {character.chapter != null ? character.chapter : "なし"}
-                      </span>
-                    </div>
+        {isLoading ? (
+          <div className="loading">Now Loading...</div>
+        ) : (
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <main>
+                  <div className="cards-container">
+                    {getPaginatedCharacters().map((character) => {
+                      return (
+                        <Link
+                          to={`/character/${character.id}`}
+                          key={character.id}
+                        >
+                          <div className="card">
+                            <img
+                              src={
+                                character.image != null
+                                  ? `https://jojos-bizarre-api.netlify.app/assets/${character.image}`
+                                  : `dummy.png`
+                              }
+                              alt="character"
+                              className="card-image"
+                            ></img>
+                            <div className="card-content">
+                              <h3 className="card-title">
+                                {character.japaneseName}
+                              </h3>
+                              <p className="card-description">
+                                {character.catchphrase != null
+                                  ? character.catchphrase
+                                  : "なし"}
+                              </p>
+                              <div className="card-footer">
+                                <span className="affiliation">
+                                  {character.chapter != null
+                                    ? character.chapter
+                                    : "なし"}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })}
                   </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className="pager">
-            <button className="prev" onClick={handlePrev} disabled={page === 1}>
-              Previous
-            </button>
-            <span className="page-number">{page}</span>
-            <button className="next" onClick={handleNext}>
-              Next
-            </button>
-          </div>
-        </main>
-      )}
-    </div>
+                  <div className="pager">
+                    <button
+                      className="prev"
+                      onClick={handlePrev}
+                      disabled={page === 1}
+                    >
+                      Previous
+                    </button>
+                    <span className="page-number">{page}</span>
+                    <button className="next" onClick={handleNext}>
+                      Next
+                    </button>
+                  </div>
+                </main>
+              }
+            />
+            <Route path="/character/:id" element={<CharacterDetail />} />
+          </Routes>
+        )}
+      </div>
+    </Router>
   );
 }
 
