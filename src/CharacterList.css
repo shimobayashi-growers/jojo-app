@@ -1,26 +1,9 @@
-.nav-link {
-  margin-right: 16px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-.nav-link:hover {
-  color: #0056b3;
-}
-
-.home {
-  text-align: center;
-  padding: 50px;
-}
-
 .container {
   padding-top: 0;
 }
 
 .header {
   display: flex;
-  flex-direction: row; /* 横並びにするために追加 */
   justify-content: space-between;
   align-items: center;
   padding-top: 16px;
@@ -29,7 +12,6 @@
 }
 
 .header-content {
-  display: flex; /* 横並びにするために追加 */
   width: 100%;
   max-width: 1280px;
   margin-left: auto;
@@ -40,8 +22,7 @@
 .logo {
   margin-right: 16px;
   width: 150px;
-  height: auto; /* 縦に潰れないように修正 */
-  max-height: 100px; /* 必要に応じて最大高さを設定 */
+  height: 20%;
 }
 
 main {
