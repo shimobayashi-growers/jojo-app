@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
+import "./CharacterDetail.css";
 
 function CharacterDetail() {
   const { id } = useParams();
@@ -23,28 +24,29 @@ function CharacterDetail() {
   }
 
   return (
-    <div className="card">
-      <Link to="/">
-        <img
-          src={
-            character.image != null
-              ? `https://jojos-bizarre-api.netlify.app/assets/${character.image}`
-              : `dummy.png`
-          }
-          alt="character"
-          className="card-image"
-        />
-      </Link>
-      <div className="card-content">
-        <h1 className="card-title">{character.japaneseName}</h1>
-        <p className="card-description">
+    <div className="detail">
+      <img
+        src={
+          character.image != null
+            ? `https://jojos-bizarre-api.netlify.app/assets/${character.image}`
+            : `dummy.png`
+        }
+        alt="character"
+        className="detail-image"
+      />
+      <div className="detail-content">
+        <h1 className="detail-title">{character.japaneseName}</h1>
+        <p className="detail-description">
           {character.catchphrase != null ? character.catchphrase : "なし"}
         </p>
-        <div className="card-footer">
-          <span className="affiliation">
+        <div className="detail-footer">
+          <span className="detail-affiliation">
             {character.chapter != null ? character.chapter : "なし"}
           </span>
         </div>
+        <Link to="/" className="back-button">
+          戻る
+        </Link>
       </div>
     </div>
   );

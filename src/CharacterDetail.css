@@ -1,0 +1,81 @@
+.detail {
+  max-width: 600px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+
+.detail-image {
+  width: 30%;
+  height: 30%;
+  display: block;
+  margin: 10px; /* 画像の周りに余白を追加 */
+}
+
+.detail-content {
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.detail-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.detail-footer {
+  font-size: 14px;
+  color: #999;
+}
+
+.detail-affiliation {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+}
+
+.back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .detail {
+    flex-direction: column;
+    padding: 0 10px; /* 折り返した余白を追加 */
+  }
+
+  .detail-image {
+    width: 50%;
+    height: 50%;
+    display: block;
+    margin: 10px auto; /* 画像の周りに余白を追加し、中央に表示 */
+  }
+
+  .detail-content {
+    width: 90%;
+  }
+}
