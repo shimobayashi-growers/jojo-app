@@ -43,7 +43,11 @@ function StandDetail() {
           {stand.battlecry != null ? stand.battlecry : "なし"}
         </p>
         <p className="detail-description">
-          {stand.standUser != null ? stand.standUser : "なし"}
+          {stand.standUser != null ? (
+            <Link to={`/character/${stand.standUser}`}>キャラクター</Link>
+          ) : (
+            "なし"
+          )}
         </p>
         <div className="detail-footer">
           <span className="detail-affiliation">
