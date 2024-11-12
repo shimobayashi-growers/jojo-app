@@ -21,8 +21,8 @@ function CharacterList() {
   };
 
   const getPaginatedCharacters = () => {
-    const startIndex = (page - 1) * 9;
-    const endIndex = startIndex + 9;
+    const startIndex = (page - 1) * 16;
+    const endIndex = startIndex + 16;
     return characters.slice(startIndex, endIndex);
   };
 

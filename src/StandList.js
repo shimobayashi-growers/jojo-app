@@ -21,8 +21,8 @@ function StandList() {
   };
 
   const getPaginatedStands = () => {
-    const startIndex = (page - 1) * 9;
-    const endIndex = startIndex + 9;
+    const startIndex = (page - 1) * 16;
+    const endIndex = startIndex + 16;
     return stands.slice(startIndex, endIndex);
   };
 
